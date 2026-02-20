@@ -10,7 +10,7 @@ const ContactPage = () => {
           <p>Get in touch with us for any inquiries or assistance</p>
         </div>
       </div>
-      <Contact />
+      <Contact hideHeader={true} />
     </div>
   );
 };

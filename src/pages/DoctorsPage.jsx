@@ -10,7 +10,7 @@ const DoctorsPage = () => {
           <p>Experienced medical professionals dedicated to your health and wellbeing</p>
         </div>
       </div>
-      <Doctors />
+      <Doctors hideHeader={true} />
     </div>
   );
 };

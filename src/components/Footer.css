@@ -1,8 +1,8 @@
 .footer {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  background: linear-gradient(135deg, #0a0a0a 0%, #111111 100%);
   color: white;
   padding: 100px 20px 40px;
-  border-top: 1px solid rgba(37, 99, 235, 0.2);
+  border-top: 1px solid var(--border-secondary);
   position: relative;
   overflow: hidden;
 }
@@ -15,6 +15,7 @@
   right: 0;
   height: 4px;
   background: linear-gradient(90deg, var(--primary-blue), var(--secondary-purple));
+  box-shadow: var(--glow-blue);
 }
 
 .footer::after {

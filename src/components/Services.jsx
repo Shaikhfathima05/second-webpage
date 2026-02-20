@@ -1,6 +1,6 @@
 import './Services.css';
 
-const Services = () => {
+const Services = ({ hideHeader = false }) => {
   const services = [
     {
       id: 1,
@@ -43,12 +43,14 @@ const Services = () => {
   return (
     <section id="services" className="services">
       <div className="services-container">
-        <div className="section-header">
-          <h2 className="section-title">Our Medical Services</h2>
-          <p className="section-subtitle">
-            Comprehensive healthcare solutions tailored to your needs
-          </p>
-        </div>
+        {!hideHeader && (
+          <div className="section-header">
+            <h2 className="section-title">Our Medical Services</h2>
+            <p className="section-subtitle">
+              Comprehensive healthcare solutions tailored to your needs
+            </p>
+          </div>
+        )}
         
         <div className="services-grid">
           {services.map((service) => (

@@ -1,13 +1,14 @@
 .navbar {
-  background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8), var(--glow-blue);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  border-bottom: 3px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--border-secondary);
   transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 .navbar.scrolled {
@@ -58,7 +59,7 @@
 }
 
 .navbar-menu li a {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--text-secondary);
   text-decoration: none;
   font-weight: 600;
   cursor: pointer;
@@ -78,15 +79,17 @@
   transform: translateX(-50%) scaleX(0);
   width: 60%;
   height: 2px;
-  background: white;
+  background: var(--primary-blue);
   transition: transform 0.3s ease;
   border-radius: 2px;
+  box-shadow: var(--glow-blue);
 }
 
 .navbar-menu li a:hover,
 .navbar-menu li a.active {
-  color: white;
-  background: rgba(255, 255, 255, 0.15);
+  color: var(--text-primary);
+  background: rgba(59, 130, 246, 0.1);
+  box-shadow: var(--glow-blue);
 }
 
 .navbar-menu li a:hover::before,
@@ -144,14 +147,15 @@
     top: 100%;
     left: 0;
     right: 0;
-    background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
     flex-direction: column;
     padding: 1.5rem 0;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     gap: 0;
+    border-bottom: 1px solid var(--border-secondary);
   }
 
   .navbar-menu.active {
@@ -161,7 +165,7 @@
   .navbar-menu li {
     text-align: center;
     padding: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--border-primary);
   }
 
   .navbar-menu li:last-child {

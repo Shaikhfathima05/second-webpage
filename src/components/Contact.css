@@ -19,13 +19,13 @@
 }
 
 .info-card {
-  background: white;
+  background: var(--bg-card);
   padding: 48px 36px;
   border-radius: 24px;
   text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow-lg);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(37, 99, 235, 0.08);
+  border: 1px solid var(--border-secondary);
   position: relative;
   overflow: hidden;
   animation: fadeInUp 0.8s ease-out;
@@ -48,8 +48,8 @@
 
 .info-card:hover {
   transform: translateY(-12px);
-  box-shadow: 0 20px 60px rgba(37, 99, 235, 0.15);
-  border-color: rgba(37, 99, 235, 0.2);
+  box-shadow: var(--shadow-2xl), var(--glow-cyan);
+  border-color: var(--accent-cyan);
 }
 
 .info-card:hover::before {
@@ -72,7 +72,7 @@
 }
 
 .info-card h3 {
-  color: var(--primary-blue);
+  color: var(--accent-cyan);
   font-size: 1.5rem;
   margin-bottom: 16px;
   font-weight: 700;
@@ -82,7 +82,7 @@
 }
 
 .info-card p {
-  color: var(--text-medium);
+  color: var(--text-muted);
   margin: 10px 0;
   line-height: 1.8;
   font-size: 1.0625rem;

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import TextType from './TextType';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -23,7 +24,20 @@ const Navbar = () => {
       <div className="navbar-container">
         <Link to="/" className="navbar-logo" onClick={closeMenu}>
           <span className="logo-icon">⚕️</span>
-          <span className="logo-text">HealthCare Clinic</span>
+          <span className="logo-text">
+            <TextType 
+              texts={["Your Health, Our Priority!"]}
+              typingSpeed={75}
+              deletingSpeed={50}
+              pauseDuration={1500}
+              showCursor={true}
+              cursorCharacter="_"
+              variableSpeedEnabled={false}
+              variableSpeedMin={60}
+              variableSpeedMax={120}
+              cursorBlinkDuration={0.5}
+            />
+          </span>
         </Link>
         
         <button 

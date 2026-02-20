@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { doctorsData } from '../data/doctorsData';
 import './Doctors.css';
 
-const Doctors = () => {
+const Doctors = ({ hideHeader = false }) => {
   const navigate = useNavigate();
 
   const handleViewDetails = (doctorId) => {
@@ -13,12 +13,14 @@ const Doctors = () => {
   return (
     <section id="doctors" className="doctors">
       <div className="doctors-container">
-        <div className="section-header">
-          <h2 className="section-title">Meet Our Doctors</h2>
-          <p className="section-subtitle">
-            Experienced medical professionals dedicated to your health
-          </p>
-        </div>
+        {!hideHeader && (
+          <div className="section-header">
+            <h2 className="section-title">Meet Our Doctors</h2>
+            <p className="section-subtitle">
+              Experienced medical professionals dedicated to your health
+            </p>
+          </div>
+        )}
         
         <div className="doctors-grid">
           {doctorsData.map((doctor) => (

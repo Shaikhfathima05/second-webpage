@@ -1,15 +1,17 @@
 import './Contact.css';
 
-const Contact = () => {
+const Contact = ({ hideHeader = false }) => {
   return (
     <section id="contact" className="contact">
       <div className="contact-container">
-        <div className="section-header">
-          <h2 className="section-title">Contact Us</h2>
-          <p className="section-subtitle">
-            Get in touch with us for any inquiries
-          </p>
-        </div>
+        {!hideHeader && (
+          <div className="section-header">
+            <h2 className="section-title">Contact Us</h2>
+            <p className="section-subtitle">
+              Get in touch with us for any inquiries
+            </p>
+          </div>
+        )}
 
         <div className="contact-content">
           <div className="contact-info">

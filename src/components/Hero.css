@@ -1,6 +1,6 @@
 .hero {
   padding: 160px 2rem 120px;
-  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #ffffff 100%);
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
   position: relative;
   overflow: hidden;
   min-height: 90vh;
@@ -15,7 +15,7 @@
   right: -10%;
   width: 60%;
   height: 150%;
-  background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(172, 137, 104, 0.15) 0%, transparent 70%);
   z-index: 0;
   animation: float 6s ease-in-out infinite;
 }
@@ -27,7 +27,7 @@
   left: -10%;
   width: 50%;
   height: 100%;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(172, 137, 104, 0.12) 0%, transparent 70%);
   z-index: 0;
   animation: float 8s ease-in-out infinite;
   animation-delay: 1s;
@@ -50,15 +50,31 @@
 
 .hero-title {
   font-size: 4rem;
-  color: var(--text-dark);
+  color: var(--text-primary);
   margin-bottom: 24px;
   line-height: 1.1;
   font-weight: 800;
   letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #1a1a2e 0%, #2563eb 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #c4a07e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  min-height: 4.4rem;
+  display: flex;
+  align-items: center;
+}
+
+.hero-title .text-type-container {
+  display: inline-flex;
+  align-items: center;
+}
+
+.hero-title .text-type-cursor {
+  color: #AC8968;
+  -webkit-text-fill-color: #AC8968;
+  background: none;
+  font-weight: 300;
+  margin-left: 4px;
 }
 
 .hero-title::after {
@@ -70,11 +86,12 @@
   margin-top: 24px;
   border-radius: 3px;
   animation: slideInLeft 1s ease-out 0.3s both;
+  box-shadow: var(--glow-blue);
 }
 
 .hero-subtitle {
   font-size: 1.375rem;
-  color: var(--text-medium);
+  color: var(--text-secondary);
   margin-bottom: 40px;
   line-height: 1.8;
   font-weight: 400;
@@ -136,17 +153,17 @@
 }
 
 .btn-secondary {
-  background: white;
+  background: var(--bg-card);
   color: var(--primary-blue);
   border: 2px solid var(--primary-blue);
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.1);
+  box-shadow: var(--shadow-md), var(--glow-blue);
 }
 
 .btn-secondary:hover {
   background: var(--primary-blue);
   color: white;
   transform: translateY(-4px);
-  box-shadow: 0 15px 40px rgba(37, 99, 235, 0.3);
+  box-shadow: var(--shadow-xl), var(--glow-blue);
 }
 
 .hero-image {
@@ -154,50 +171,49 @@
   position: relative;
 }
 
-.hero-image-placeholder {
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-purple) 100%);
-  border-radius: 32px;
-  height: 520px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 30px 80px rgba(37, 99, 235, 0.25);
+.hero-image-container {
   position: relative;
+  width: 100%;
+  height: 550px;
+  border-radius: 32px;
   overflow: hidden;
+  box-shadow: 0 30px 80px rgba(172, 137, 104, 0.25);
   transform: perspective(1000px) rotateY(-5deg);
   transition: transform 0.6s ease;
 }
 
-.hero-image-placeholder:hover {
+.hero-image-container:hover {
   transform: perspective(1000px) rotateY(0deg);
+  box-shadow: 0 40px 100px rgba(172, 137, 104, 0.35);
 }
 
-.hero-image-placeholder::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
-  animation: pulse 4s ease-in-out infinite;
+.hero-hospital-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s ease;
 }
 
-.hero-image-placeholder::after {
-  content: '';
+.hero-image-container:hover .hero-hospital-image {
+  transform: scale(1.05);
+}
+
+.hero-image-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
-  background-size: 200% 200%;
-  animation: shimmer 3s linear infinite;
+  background: linear-gradient(
+    135deg,
+    rgba(172, 137, 104, 0.1) 0%,
+    rgba(10, 10, 10, 0.2) 100%
+  );
+  pointer-events: none;
+  transition: opacity 0.6s ease;
 }
 
-.hero-icon {
-  font-size: 12rem;
-  position: relative;
-  z-index: 1;
-  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
-  animation: float 3s ease-in-out infinite;
+.hero-image-container:hover .hero-image-overlay {
+  opacity: 0.7;
 }
 
 @keyframes float {
@@ -262,6 +278,7 @@
 
   .hero-title {
     font-size: 2.75rem;
+    min-height: 3rem;
   }
 
   .hero-title::after {
@@ -282,13 +299,18 @@
     justify-content: center;
   }
 
-  .hero-image-placeholder {
+  .hero-image-container {
     height: 400px;
+    transform: none;
+    border-radius: 24px;
+  }
+
+  .hero-image-container:hover {
     transform: none;
   }
 
-  .hero-icon {
-    font-size: 8rem;
+  .hero-hospital-image {
+    object-position: center;
   }
 }
 

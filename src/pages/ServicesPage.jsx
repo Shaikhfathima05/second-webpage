@@ -10,7 +10,7 @@ const ServicesPage = () => {
           <p>Comprehensive healthcare solutions tailored to your needs</p>
         </div>
       </div>
-      <Services />
+      <Services hideHeader={true} />
     </div>
   );
 };
