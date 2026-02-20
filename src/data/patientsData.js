@@ -5,7 +5,7 @@ export const patientsData = [
     appointmentId: "APT-78452",
     reportType: "Blood Test",
     status: "Completed",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=patient1",
+    image: "https://randomuser.me/api/portraits/men/1.jpg",
     reportLink: "/reports/APT-78452"
   },
   {
@@ -14,7 +14,7 @@ export const patientsData = [
     appointmentId: "APT-45896",
     reportType: "MRI Scan",
     status: "Pending",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=patient2",
+    image: "https://randomuser.me/api/portraits/women/2.jpg",
     reportLink: "/reports/APT-45896"
   },
   {
@@ -23,7 +23,7 @@ export const patientsData = [
     appointmentId: "APT-96325",
     reportType: "X-Ray",
     status: "Critical",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=patient3",
+    image: "https://randomuser.me/api/portraits/men/3.jpg",
     reportLink: "/reports/APT-96325"
   },
   {
@@ -32,7 +32,7 @@ export const patientsData = [
     appointmentId: "APT-14785",
     reportType: "CT Scan",
     status: "Completed",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=patient4",
+    image: "https://randomuser.me/api/portraits/women/4.jpg",
     reportLink: "/reports/APT-14785"
   },
   {
@@ -41,7 +41,7 @@ export const patientsData = [
     appointmentId: "APT-32541",
     reportType: "Ultrasound",
     status: "Pending",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=patient5",
+    image: "https://randomuser.me/api/portraits/men/5.jpg",
     reportLink: "/reports/APT-32541"
   },
   {
@@ -50,7 +50,7 @@ export const patientsData = [
     appointmentId: "APT-65478",
     reportType: "Blood Test",
     status: "Completed",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=patient6",
+    image: "https://randomuser.me/api/portraits/women/6.jpg",
     reportLink: "/reports/APT-65478"
   },
   {
@@ -59,7 +59,7 @@ export const patientsData = [
     appointmentId: "APT-98741",
     reportType: "ECG",
     status: "Critical",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=patient7",
+    image: "https://randomuser.me/api/portraits/men/7.jpg",
     reportLink: "/reports/APT-98741"
   },
   {
@@ -68,7 +68,7 @@ export const patientsData = [
     appointmentId: "APT-25836",
     reportType: "MRI Scan",
     status: "Completed",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=patient8",
+    image: "https://randomuser.me/api/portraits/women/8.jpg",
     reportLink: "/reports/APT-25836"
   },
   {
@@ -77,7 +77,7 @@ export const patientsData = [
     appointmentId: "APT-85296",
     reportType: "CT Scan",
     status: "Pending",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=patient9",
+    image: "https://randomuser.me/api/portraits/men/9.jpg",
     reportLink: "/reports/APT-85296"
   },
   {
@@ -86,7 +86,7 @@ export const patientsData = [
     appointmentId: "APT-74125",
     reportType: "X-Ray",
     status: "Completed",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=patient10",
+    image: "https://randomuser.me/api/portraits/women/10.jpg",
     reportLink: "/reports/APT-74125"
   },
   {
@@ -95,7 +95,7 @@ export const patientsData = [
     appointmentId: "APT-36985",
     reportType: "Blood Test",
     status: "Critical",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=patient11",
+    image: "https://randomuser.me/api/portraits/men/11.jpg",
     reportLink: "/reports/APT-36985"
   },
   {
@@ -104,7 +104,7 @@ export const patientsData = [
     appointmentId: "APT-15973",
     reportType: "Ultrasound",
     status: "Pending",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=patient12",
+    image: "https://randomuser.me/api/portraits/women/12.jpg",
     reportLink: "/reports/APT-15973"
   }
 ];
