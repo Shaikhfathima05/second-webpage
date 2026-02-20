@@ -1,38 +1,67 @@
 .scroll-to-top {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(135deg, #2c5f8d 0%, #4a90c9 100%);
+  bottom: 32px;
+  right: 32px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-purple) 100%);
   color: white;
   border: none;
   border-radius: 50%;
-  font-size: 1.5rem;
+  font-size: 2rem;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(44, 95, 141, 0.4);
-  transition: all 0.3s ease;
+  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.4);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 999;
   display: flex;
   align-items: center;
   justify-content: center;
+  backdrop-filter: blur(10px);
+}
+
+.scroll-to-top::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-purple));
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
 .scroll-to-top:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(44, 95, 141, 0.6);
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 12px 40px rgba(37, 99, 235, 0.5);
+}
+
+.scroll-to-top:hover::before {
+  opacity: 0.3;
+  animation: pulse 2s ease-in-out infinite;
 }
 
 .scroll-to-top:active {
-  transform: translateY(-2px);
+  transform: translateY(-4px) scale(1.02);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
 }
 
 @media (max-width: 768px) {
   .scroll-to-top {
-    bottom: 20px;
-    right: 20px;
-    width: 45px;
-    height: 45px;
-    font-size: 1.3rem;
+    bottom: 24px;
+    right: 24px;
+    width: 54px;
+    height: 54px;
+    font-size: 1.75rem;
   }
 }
+

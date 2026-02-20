@@ -1,17 +1,23 @@
 .navbar {
-  background: #ffffff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-container {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 1.25rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,34 +26,72 @@
 .navbar-logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 12px;
   font-size: 1.5rem;
-  font-weight: 700;
-  color: #2c5f8d;
+  font-weight: 800;
+  color: white;
+  transition: transform 0.3s ease;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
 }
 
 .logo-icon {
-  font-size: 2rem;
+  font-size: 2.25rem;
+  filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.3));
+}
+
+.logo-text {
+  color: white;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-menu {
   display: flex;
   list-style: none;
-  gap: 2rem;
+  gap: 8px;
   margin: 0;
   padding: 0;
 }
 
 .navbar-menu li a {
-  color: #333;
+  color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  transition: color 0.3s;
+  transition: all 0.3s ease;
+  padding: 10px 20px;
+  border-radius: 10px;
+  position: relative;
+  font-size: 1rem;
+  display: block;
 }
 
-.navbar-menu li a:hover {
-  color: #2c5f8d;
+.navbar-menu li a::before {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 60%;
+  height: 2px;
+  background: white;
+  transition: transform 0.3s ease;
+  border-radius: 2px;
+}
+
+.navbar-menu li a:hover,
+.navbar-menu li a.active {
+  color: white;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.navbar-menu li a:hover::before,
+.navbar-menu li a.active::before {
+  transform: translateX(-50%) scaleX(1);
 }
 
 .menu-toggle {
@@ -56,18 +100,41 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.menu-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .menu-toggle span {
-  width: 25px;
+  width: 28px;
   height: 3px;
-  background: #333;
+  background: white;
   margin: 3px 0;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  border-radius: 3px;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
 }
 
 @media (max-width: 768px) {
+  .navbar-container {
+    padding: 1rem 1.5rem;
+  }
+
   .menu-toggle {
     display: flex;
   }
@@ -77,21 +144,38 @@
     top: 100%;
     left: 0;
     right: 0;
-    background: #ffffff;
+    background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
     flex-direction: column;
-    padding: 1rem 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 0;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    gap: 0;
   }
 
   .navbar-menu.active {
-    max-height: 400px;
+    max-height: 500px;
   }
 
   .navbar-menu li {
     text-align: center;
-    padding: 0.5rem 0;
+    padding: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .navbar-menu li:last-child {
+    border-bottom: none;
+  }
+
+  .navbar-menu li a {
+    display: block;
+    padding: 16px 24px;
+    border-radius: 0;
+  }
+
+  .navbar-menu li a::before {
+    display: none;
   }
 }
+

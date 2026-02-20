@@ -1,40 +1,14 @@
+import { useNavigate } from 'react-router-dom';
+import { doctorsData } from '../data/doctorsData';
 import './Doctors.css';
 
 const Doctors = () => {
-  const doctors = [
-    {
-      id: 1,
-      name: 'Dr. Sarah Johnson',
-      specialty: 'Cardiologist',
-      experience: '15 years',
-      education: 'MD, Harvard Medical School',
-      icon: '👩‍⚕️'
-    },
-    {
-      id: 2,
-      name: 'Dr. Michael Chen',
-      specialty: 'Orthopedic Surgeon',
-      experience: '12 years',
-      education: 'MD, Johns Hopkins University',
-      icon: '👨‍⚕️'
-    },
-    {
-      id: 3,
-      name: 'Dr. Emily Rodriguez',
-      specialty: 'Pediatrician',
-      experience: '10 years',
-      education: 'MD, Stanford University',
-      icon: '👩‍⚕️'
-    },
-    {
-      id: 4,
-      name: 'Dr. James Wilson',
-      specialty: 'Neurologist',
-      experience: '18 years',
-      education: 'MD, Yale School of Medicine',
-      icon: '👨‍⚕️'
-    }
-  ];
+  const navigate = useNavigate();
+
+  const handleViewDetails = (doctorId) => {
+    navigate(`/doctor/${doctorId}`);
+    window.scrollTo(0, 0);
+  };
 
   return (
     <section id="doctors" className="doctors">
@@ -47,7 +21,7 @@ const Doctors = () => {
         </div>
         
         <div className="doctors-grid">
-          {doctors.map((doctor) => (
+          {doctorsData.map((doctor) => (
             <div key={doctor.id} className="doctor-card">
               <div className="doctor-avatar">{doctor.icon}</div>
               <h3 className="doctor-name">{doctor.name}</h3>
@@ -56,6 +30,12 @@ const Doctors = () => {
                 <p><strong>Experience:</strong> {doctor.experience}</p>
                 <p><strong>Education:</strong> {doctor.education}</p>
               </div>
+              <button 
+                className="btn-details"
+                onClick={() => handleViewDetails(doctor.id)}
+              >
+                More Details →
+              </button>
             </div>
           ))}
         </div>
